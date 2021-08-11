@@ -1,1 +1,3 @@
-web: gunicorn app= dash.Dash(__name__) server= app.server
+wweb: gunicorn 
+app = dash.Dash(__name__)
+server = app.server
