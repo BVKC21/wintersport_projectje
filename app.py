@@ -9,9 +9,11 @@ from datetime import datetime
 import numpy as np
 from PIL import Image
 
-mypath = "G:\Mijn Drive\projecten\wintersport_projectje/" 
+import requests
+
+url = "https://github.com/BVKC21/wintersport_projectje/blob/master/achtergrond.png" 
 #load background 
-img=Image.open(mypath+'achtergrond.png')
+img = Image.open(requests.get(url, stream=True).raw)
 
 #create text depending on datetime
 def create_text(vertrekdatum):
