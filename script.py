@@ -47,3 +47,4 @@ def make_image(data,size=(20, 15), dpi=80):
     ax.imshow(data, aspect='equal',interpolation="nearest")
 
 make_image(img)
+plt.savefig("hoe_lang_nog", format='png', bbox_inches='tight')
