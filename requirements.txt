@@ -4,5 +4,5 @@ django-heroku
 requests
 datetime
 Pillow
-matplotlib
 dash
+plotly
