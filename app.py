@@ -11,9 +11,11 @@ from PIL import Image
 
 import requests
 
-url = "https://github.com/BVKC21/wintersport_projectje/blob/master/achtergrond.png" 
+#url = "G:\Mijn Drive\projecten\wintersport_projectje/achtergrond.png"
+#"https://github.com/BVKC21/wintersport_projectje/blob/master/achtergrond.png" 
 #load background 
-img = Image.open(requests.get(url, stream=True).raw)
+#img = Image.open(url)
+#Image.open(requests.get(url, stream=True).raw)
 
 #create text depending on datetime
 def create_text(vertrekdatum):
@@ -25,7 +27,7 @@ def create_text(vertrekdatum):
     b= 'Bijna, nog '+ str(delta.days)+ ' dagen :)'
     c= 'Nee, nog '+ str(delta.days)+ ' dagen :('
     if delta.days < 10:
-      return (b)
+        return (b)
     elif delta.days <1:
         return (a)
     else:
@@ -38,7 +40,7 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 #create figure element
 
 import plotly.graph_objects as go
-text = create_text('2022-03-22')
+text = create_text('2022-03-16')
 # Create figure
 fig = go.Figure()
 
@@ -72,7 +74,7 @@ fig.update_yaxes(
 )
 
 # Add image
-fig.add_layout_image(
+"""fig.add_layout_image(
     dict(
         x=0,
         sizex=img_width * scale_factor,
@@ -84,7 +86,7 @@ fig.add_layout_image(
         layer="below",
         sizing="stretch",
         source=img)
-)
+)"""
 fig.add_annotation(x=img_width * scale_factor/2, y=img_height * scale_factor/1.2,
             text="Gaan we nou al op wintersport?",
             showarrow=False,
@@ -109,7 +111,7 @@ app.layout = html.Div(children=[
     html.H1(children='Hey fijne wintersport liefhebber!'),
 
     html.Div(children='''
-        Hier vindt je de belangrijkste informatie van dit moment.
+        Hier vind je de belangrijkste informatie van dit moment.
     '''),
 
     dcc.Graph(
