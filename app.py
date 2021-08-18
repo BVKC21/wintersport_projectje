@@ -11,6 +11,37 @@ from PIL import Image
 import requests
 from whitenoise import WhiteNoise
 
+import os
+
+import dash
+import dash_core_components as dcc
+import dash_html_components as html
+
+external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+
+server = app.server
+
+app.layout = html.Div([
+    html.H2('Hello World'),
+    dcc.Dropdown(
+        id='dropdown',
+        options=[{'label': i, 'value': i} for i in ['LA', 'NYC', 'MTL']],
+        value='LA'
+    ),
+    html.Div(id='display-value')
+])
+
+@app.callback(dash.dependencies.Output('display-value', 'children'),
+              [dash.dependencies.Input('dropdown', 'value')])
+def display_value(value):
+    return 'You have selected "{}"'.format(value)
+
+if __name__ == '__main__':
+    app.run_server(debug=True)
+
+"""
 url = "achtergrond.png"
 #"https://github.com/BVKC21/wintersport_projectje/blob/master/achtergrond.png" 
 #load background 
@@ -77,7 +108,7 @@ fig.update_yaxes(
 )
 
 # Add image
-"""fig.add_layout_image(
+fig.add_layout_image(
     dict(
         x=0,
         sizex=img_width * scale_factor,
@@ -89,7 +120,7 @@ fig.update_yaxes(
         layer="below",
         sizing="stretch",
         source=img)
-)"""
+)
 fig.add_annotation(x=img_width * scale_factor/2, y=img_height * scale_factor/1.2,
             text="Gaan we nou al op wintersport?",
             showarrow=False,
@@ -124,4 +155,4 @@ app.layout = html.Div(children=[
 ])
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=True)"""

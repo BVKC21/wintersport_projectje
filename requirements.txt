@@ -1,3 +1,4 @@
+os
 django
 gunicorn
 django-heroku
