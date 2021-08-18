@@ -8,13 +8,17 @@ from datetime import date
 from datetime import datetime
 import numpy as np
 from PIL import Image
-
 import requests
+from whitenoise import WhiteNoise
 
-#url = "G:\Mijn Drive\projecten\wintersport_projectje/achtergrond.png"
+
+server = app.server
+server.wsgi_app = WhiteNoise(server.wsgi_app, root="static/")
+
+url = "achtergrond.png"
 #"https://github.com/BVKC21/wintersport_projectje/blob/master/achtergrond.png" 
 #load background 
-#img = Image.open(url)
+img = Image.open(url)
 #Image.open(requests.get(url, stream=True).raw)
 
 #create text depending on datetime
