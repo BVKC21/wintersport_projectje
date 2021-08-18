@@ -11,10 +11,6 @@ from PIL import Image
 import requests
 from whitenoise import WhiteNoise
 
-
-server = app.server
-server.wsgi_app = WhiteNoise(server.wsgi_app, root="static/")
-
 url = "achtergrond.png"
 #"https://github.com/BVKC21/wintersport_projectje/blob/master/achtergrond.png" 
 #load background 
@@ -40,6 +36,9 @@ def create_text(vertrekdatum):
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+
+server = app.server
+server.wsgi_app = WhiteNoise(server.wsgi_app, root="static/")
 
 #create figure element
 
