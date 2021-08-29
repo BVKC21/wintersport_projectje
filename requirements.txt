@@ -6,3 +6,4 @@ datetime
 Pillow
 dash
 plotly
+pandas
