@@ -12,9 +12,9 @@ import plotly.graph_objects as go
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 
-#mypath = "G:\Mijn Drive\projecten\wintersport_projectje/"
+mypath = "G:\Mijn Drive\projecten\wintersport_projectje/"
 
-#img=Image.open(mypath+'achtergrond.png')
+img=Image.open(mypath+'achtergrond.png')
 
 def create_text(vertrekdatum):
 #vertrekdatum needs to be in YYYY-MM-DD format
@@ -63,7 +63,7 @@ fig.update_yaxes(
     scaleanchor="x"
 )
 # Add image
-"""fig.add_layout_image(
+fig.add_layout_image(
     dict(
         x=0,
         sizex=img_width * scale_factor,
@@ -75,7 +75,7 @@ fig.update_yaxes(
         layer="below",
         sizing="stretch",
         source=img)
-)"""
+)
 fig.add_annotation(x=img_width * scale_factor/2, y=img_height * scale_factor/1.2,
             text="Gaan we nou al op wintersport?",
             showarrow=False,
