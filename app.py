@@ -36,7 +36,7 @@ server = app.server
 app.layout = html.Div(children=[
     html.H1(children='Hi Fijne wintersportvrienden!'),
     html.Div(children=text),
-    html.Img(src='/assets/achtergrond.png',width=100%, height=100%)
+    html.Img(src='/assets/achtergrond.png',style={'height':'100%', 'width':'100%'})
 ])
 
 if __name__ == '__main__':
