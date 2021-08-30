@@ -34,9 +34,10 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
     
 app.layout = html.Div(children=[
-    html.H1(children='Hi Fijne wintersportvrienden!'),
+    html.H1(children='Hi Fijne wintersportvrienden!',style={'textAlign': 'center'}),
+
     html.Div(children=text),
-    html.Img(src='/assets/achtergrond.png',style={'height':'100%', 'width':'100%'})
+    html.Img(src='/assets/achtergrond.png')
 ])
 
 if __name__ == '__main__':
