@@ -29,7 +29,7 @@ def create_text(vertrekdatum):
 
 text = create_text('2022-03-22')
 
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets,title='Wintersport 2022')
 
 server = app.server
     
