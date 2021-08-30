@@ -33,16 +33,23 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 server = app.server
     
-app.layout = html.Div(children=[
-    html.H1(children='Hi Fijne wintersportvrienden!',style={'textAlign': 'center'}),
-
-    html.Div(children=text),
-    html.Img(src='/assets/achtergrond.png')
+app.layout = html.Div([
+    html.Div(
+        className="app-header",
+        children=[
+            html.Div('Hi Fijne wintersportvrienden!', className="app-header--title")
+        ]
+    ),
+    html.Div(
+        children=html.Div([
+            html.H5('Gaan we nou al op wintersport?', ),
+            html.Div(text)
+        ])
+    )
 ])
 
 if __name__ == '__main__':
     app.run_server(debug=True)
-
 
 
 
