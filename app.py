@@ -27,12 +27,14 @@ def create_text(vertrekdatum):
         return (c)
 
 
-df= pd.read_excel("https://github.com/BVKC21/wintersport_projectje/blob/master/data/df.xlsx",index_col=None,dtype={'Geslacht': 'category', 'Erg veel namen':  'category','Ik wil materiaal huren':  'category'})
-fig1 = px.histogram(df, x="Ik wil materiaal huren", color='Geslacht', title='Wie huurt het meest?',)
-fig1.update_layout(title_x=0.5)
-fig2 = px.violin(df, y="Geboortedatum",box=True, points="all",title='Leeftijd verdeling')
-fig2.update_layout(title_x=0.5)
+df = pd.DataFrame({
+    "Fruit": ["Apples", "Oranges", "Bananas", "Apples", "Oranges", "Bananas"],
+    "Amount": [4, 1, 2, 2, 4, 5],
+    "City": ["SF", "SF", "SF", "Montreal", "Montreal", "Montreal"]
+})
 
+fig1 = px.bar(df, x="Fruit", y="Amount", color="City", barmode="group")
+fig2 = px.bar(df, x="Fruit", y="Amount", color="City", barmode="group")
 
 text = create_text('2022-03-22')
 
