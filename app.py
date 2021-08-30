@@ -58,8 +58,9 @@ app.layout = html.Div([
     html.Div(children=[
         dcc.Graph(
             id="graph1", 
-            style={'display': 'inline-block'}),
+            style={'display': 'inline-block'},
             figure=fig1
+            ),
         dcc.Graph(
             id="graph2", 
             style={'display': 'inline-block'},
