@@ -27,6 +27,15 @@ def create_text(vertrekdatum):
         return (c)
 
 
+df = pd.DataFrame({
+    "Fruit": ["Apples", "Oranges", "Bananas", "Apples", "Oranges", "Bananas"],
+    "Amount": [4, 1, 2, 2, 4, 5],
+    "City": ["SF", "SF", "SF", "Montreal", "Montreal", "Montreal"]
+})
+
+fig1 = px.bar(df, x="Fruit", y="Amount", color="City", barmode="group")
+fig2 = px.bar(df, x="Fruit", y="Amount", color="City", barmode="group")
+
 text = create_text('2022-03-22')
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets,title='Wintersport 2022')
@@ -45,12 +54,20 @@ app.layout = html.Div([
             html.H5('Gaan we nou al op wintersport?',className="app-text--title" ),
             html.Div(text,className="app-text--title")
         ])
-    )
+    ),
+    html.Div(children=[
+        dcc.Graph(
+            id="graph1", 
+            style={'display': 'inline-block'}),
+            figure=fig1
+        dcc.Graph(
+            id="graph2", 
+            style={'display': 'inline-block'},
+            figure=fig2
+            )
+    ])
+    
 ])
 
 if __name__ == '__main__':
     app.run_server(debug=True)
-
-
-
-
