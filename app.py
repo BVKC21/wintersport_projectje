@@ -13,9 +13,9 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 def create_text(vertrekdatum):
     colors = {
-        'red': '#8B0000',
-        'orange': '#FF8C00',
-        'green':'#006400'
+        'red': 'app-red--title',
+        'orange': 'app-orange--title',
+        'green':'app-green--title'
     }
     #vertrekdatum needs to be in YYYY-MM-DD format
     my_date = datetime.strptime(vertrekdatum, "%Y-%m-%d")
@@ -25,11 +25,11 @@ def create_text(vertrekdatum):
     b= 'Bijna, nog '+ str(delta.days)+ ' dagen :)'
     c= 'Nee, nog '+ str(delta.days)+ ' dagen :('
     if delta.days < 10:
-        return (b,colors['app-orange--title'])
+        return (b,colors['orange'])
     elif delta.days <1:
-        return (a,b,colors['app-green--title'])
+        return (a,b,colors['green'])
     else:
-        return (c,b,colors['app-red--title'])
+        return (c,b,colors['red'])
 
 
 df= pd.read_csv("https://raw.githubusercontent.com/BVKC21/wintersport_projectje/master/data/df.csv",index_col=None,dtype={'Geslacht': 'category', 'Erg veel namen':  'category','Ik wil materiaal huren':  'category'})
