@@ -1,8 +1,8 @@
 .app-header {
-    height: 60px;
-    line-height: 60px;
-    border-bottom: thin lightgrey solid;
-    text-align: center;
+	height: 60px;
+	line-height: 60px;
+	border-bottom: thin lightgrey solid;
+	text-align: center;
 }
 
 .app-base{
@@ -25,21 +25,19 @@
 
 .app-red--title{
 	font-size: 28px;
-	font-family: cursive;
 	text-align: center;
 	color: #8B0000;
 }
 
 .app-orange--title{
 	font-size: 32px;
-	font-family: cursive;
+	text-align: center;
 	text-align: center;
 	color: #FF8C00;
 }
 
 .app-green--title{
 	font-size: 40px;
-	font-family: cursive;
 	text-align: center;
 	color: $006400;
 }
