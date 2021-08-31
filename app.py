@@ -40,9 +40,8 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets,title='Winte
 
 server = app.server
     
-app.layout = html.Div([
+app.layout = html.Div(
     html.Img(src='/assets/achtergrond.png')
-]
     [
     html.Div(
         className="app-header",
