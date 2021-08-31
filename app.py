@@ -40,7 +40,14 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets,title='Winte
 
 server = app.server
     
-app.layout = html.Div([
+app.layout = html.Div(
+    style={
+    'background-image': 'url'("assets/achtergrond.png"),
+    'background-repeat': 'no-repeat',
+    'background-position': 'right top',
+    'background-size': 'cover'
+    }
+    [
     html.Div(
         className="app-header",
         children=[
