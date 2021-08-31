@@ -46,8 +46,6 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets,title='Winte
 server = app.server
     
 app.layout = html.Div([
-    html.Img(src='assets/achtergrond.png',className="app-hero-image"),
-
     html.Div(
         className="app-header",
         children=[
@@ -60,8 +58,8 @@ app.layout = html.Div([
     html.Div(className="app-base",
         children=html.Div([
             html.H5('Gaan we nou al op wintersport?',className="app-text--title" ),
-            html.Div(text[0],className=text[1]
-            )
+            html.Div(text[0],className=text[1]),
+            html.Img(src='assets/achtergrond.png',className="app-hero-image")
         ])
     ),
     html.Br(),    
