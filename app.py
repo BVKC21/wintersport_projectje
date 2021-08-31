@@ -27,9 +27,9 @@ def create_text(vertrekdatum):
     if delta.days < 10:
         return (b,colors['orange'])
     elif delta.days <1:
-        return (a,b,colors['green'])
+        return (a,colors['green'])
     else:
-        return (c,b,colors['red'])
+        return (c,colors['red'])
 
 
 df= pd.read_csv("https://raw.githubusercontent.com/BVKC21/wintersport_projectje/master/data/df.csv",index_col=None,dtype={'Geslacht': 'category', 'Erg veel namen':  'category','Ik wil materiaal huren':  'category'})
@@ -46,7 +46,7 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets,title='Winte
 server = app.server
     
 app.layout = html.Div([
-# html.Img(src='assets/achtergrond.png'),
+    html.Img(src='assets/achtergrond.png',className="app-hero-image"),
 
     html.Div(
         className="app-header",
@@ -54,6 +54,7 @@ app.layout = html.Div([
             html.Div('Welkom fijne wintersportvrienden!', className="app-header--title")
         ]
     ),
+    html.H5('In dit dashboard zal de komende periode nuttige informatie verschijnen.',className="app-text--title" ),       
     html.Br(),
 
     html.Div(className="app-base",
@@ -65,7 +66,6 @@ app.layout = html.Div([
     ),
     html.Br(),    
     
-    html.H5('In dit dashboard zal de komende periode nuttige informatie verschijnen.',className="app-text--title" ),       
     
     html.Div(children=[
         dcc.Graph(className= 'six columns',
