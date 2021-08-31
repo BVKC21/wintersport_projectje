@@ -28,9 +28,9 @@ def create_text(vertrekdatum):
 
 
 df= pd.read_csv("https://raw.githubusercontent.com/BVKC21/wintersport_projectje/master/data/df.csv",index_col=None,dtype={'Geslacht': 'category', 'Erg veel namen':  'category','Ik wil materiaal huren':  'category'})
-fig1 = px.histogram(df, x="Ik wil materiaal huren", color='Geslacht', title='To rent or not to rent',)
+fig1 = px.histogram(df, x="Ik wil materiaal huren", color='Geslacht', title='Lekker huren!',)
 fig1.update_layout(title_x=0.5)
-fig2 = px.violin(df, y="Geboortedatum",box=True, points="all",title='Leeftijdsverdeling')
+fig2 = px.violin(df, y="Geboortedatum",box=True, points="all",title='Uit met alle leeftijden!')
 fig2.update_layout(title_x=0.5)
 
 
@@ -40,9 +40,7 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets,title='Winte
 
 server = app.server
     
-app.layout = html.Div(
-    html.Img(src='/assets/achtergrond.png')
-    [
+app.layout = html.Div([
     html.Div(
         className="app-header",
         children=[
