@@ -33,13 +33,13 @@ def create_text(vertrekdatum):
 
 
 df= pd.read_csv("https://raw.githubusercontent.com/BVKC21/wintersport_projectje/master/data/df.csv",index_col=None,dtype={'Geslacht': 'category', 'Erg veel namen':  'category','Ik wil materiaal huren':  'category'})
-fig1 = px.histogram(df, x="Ik wil materiaal huren", color='Geslacht', title='Lekker huren!',)
+fig1 = px.histogram(df, x="Ik wil materiaal huren", color='Geslacht', title='Lekker huren')
 fig1.update_layout(title_x=0.5)
-fig2 = px.violin(df, y="Geboortedatum",box=True, points="all",title='Uit met alle leeftijden!')
+fig2 = px.violin(df, y="Geboortedatum",box=True, points="all",title='Uit met alle leeftijden')
 fig2.update_layout(title_x=0.5)
 
 
-text = create_text('2021-09-08')
+text = create_text('2022-03-16')
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets,title='Wintersport 2022')
 
