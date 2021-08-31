@@ -27,10 +27,10 @@ def create_text(vertrekdatum):
         return (c)
 
 
-df= pd.read_excel("/data/df.xlsx",index_col=None,dtype={'Geslacht': 'category', 'Erg veel namen':  'category','Ik wil materiaal huren':  'category'})
-fig1 = px.histogram(df, x="Ik wil materiaal huren", color='Geslacht', title='Wie huurt het meest?')
+df= pd.read_csv("https://raw.githubusercontent.com/BVKC21/wintersport_projectje/master/data/df.csv",index_col=None,dtype={'Geslacht': 'category', 'Erg veel namen':  'category','Ik wil materiaal huren':  'category'})
+fig1 = px.histogram(df, x="Ik wil materiaal huren", color='Geslacht', title='To rent or not to rent',)
 fig1.update_layout(title_x=0.5)
-fig2 = px.violin(df, y="Geboortedatum",box=True, points="all",title='Leeftijd verdeling')
+fig2 = px.violin(df, y="Geboortedatum",box=True, points="all",title='Leeftijdsverdeling')
 fig2.update_layout(title_x=0.5)
 
 
