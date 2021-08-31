@@ -32,7 +32,6 @@
 .app-orange--title{
 	font-size: 32px;
 	text-align: center;
-	text-align: center;
 	color: #FF8C00;
 }
 
@@ -43,7 +42,7 @@
 }
 
 
-.app-hero-image {
+.app-hero-image{
 	background-color: #cccccc;
 	height: 500px;
 	background-position: center;
