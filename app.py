@@ -41,7 +41,7 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets,title='Winte
 server = app.server
     
 app.layout = html.Div([
-    html.Img(className='hero-image',src='/assets/achtergrond.png')
+    html.Img(src='/assets/achtergrond.png')
 ]
     [
     html.Div(
