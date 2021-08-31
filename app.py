@@ -49,7 +49,7 @@ app.layout = html.Div([
     html.Div(
         className="app-header",
         children=[
-            html.Div('Welkom fijne wintersportvrienden!', className="container")
+            html.Div('Welkom fijne wintersportvrienden!', className="app-header--title")
         ]
     ),
     html.H5('In dit dashboard zal de komende periode nuttige informatie verschijnen.',className="app-text--title" ),       
