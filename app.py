@@ -63,7 +63,15 @@ app.layout = html.Div([
             )
         ])
     ),
+    html.Br(),    
     
+    html.Div(className="app-base",
+        children=html.Div([
+            html.H5('In dit dashboard zal de komende periode nuttige informatie verschijnen.',className="app-text--title" ),
+            
+        ])
+    ),
+
     html.Div(children=[
         dcc.Graph(className= 'six columns',
             id="graph1", 
