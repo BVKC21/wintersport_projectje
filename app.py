@@ -13,9 +13,9 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 def create_text(vertrekdatum):
     colors = {
-        'red': '#FF0000',
-        'orange': '#ff8c00',
-        'green':'#008000'
+        'red': '#8B0000',
+        'orange': '#FF8C00',
+        'green':'#006400'
     }
     #vertrekdatum needs to be in YYYY-MM-DD format
     my_date = datetime.strptime(vertrekdatum, "%Y-%m-%d")
@@ -25,11 +25,11 @@ def create_text(vertrekdatum):
     b= 'Bijna, nog '+ str(delta.days)+ ' dagen :)'
     c= 'Nee, nog '+ str(delta.days)+ ' dagen :('
     if delta.days < 10:
-        return (b,colors['orange'])
+        return (b,colors['app-orange--title'])
     elif delta.days <1:
-        return (a,b,colors['green'])
+        return (a,b,colors['app-green--title'])
     else:
-        return (c,b,colors['red'])
+        return (c,b,colors['app-red--title'])
 
 
 df= pd.read_csv("https://raw.githubusercontent.com/BVKC21/wintersport_projectje/master/data/df.csv",index_col=None,dtype={'Geslacht': 'category', 'Erg veel namen':  'category','Ik wil materiaal huren':  'category'})
@@ -39,7 +39,7 @@ fig2 = px.violin(df, y="Geboortedatum",box=True, points="all",title='Uit met all
 fig2.update_layout(title_x=0.5)
 
 
-text = create_text('2022-03-22')
+text = create_text('2021-09-08')
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets,title='Wintersport 2022')
 
@@ -59,12 +59,7 @@ app.layout = html.Div([
     html.Div(className="app-base",
         children=html.Div([
             html.H5('Gaan we nou al op wintersport?',className="app-text--title" ),
-            html.Div(text[0],
-            className="app-text--title",
-            style={
-            'textAlign': 'center',
-            'color': text[1]
-        }
+            html.Div(text[0],className=text[1]
             )
         ])
     ),
