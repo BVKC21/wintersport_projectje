@@ -53,13 +53,14 @@ app.layout = html.Div([
             html.Div(text,className="app-text--title")
         ])
     ),
+    
     html.Div(children=[
-        dcc.Graph(
+        dcc.Graph(className= 'six columns',
             id="graph1", 
             style={'display': 'inline-block'},
             figure=fig1
             ),
-        dcc.Graph(
+        dcc.Graph(className='six columns',
             id="graph2", 
             style={'display': 'inline-block'},
             figure=fig2
