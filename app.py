@@ -12,7 +12,12 @@ import plotly.graph_objects as go
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 def create_text(vertrekdatum):
-#vertrekdatum needs to be in YYYY-MM-DD format
+    colors = {
+        'red': '#FF0000',
+        'orange': '#ff8c00',
+        'green':'#008000'
+    }
+    #vertrekdatum needs to be in YYYY-MM-DD format
     my_date = datetime.strptime(vertrekdatum, "%Y-%m-%d")
     today = datetime.now()
     delta= my_date-today
@@ -20,11 +25,11 @@ def create_text(vertrekdatum):
     b= 'Bijna, nog '+ str(delta.days)+ ' dagen :)'
     c= 'Nee, nog '+ str(delta.days)+ ' dagen :('
     if delta.days < 10:
-        return (b)
+        return (b,colors['orange'])
     elif delta.days <1:
-        return (a)
+        return (a,b,colors['green'])
     else:
-        return (c)
+        return (c,b,colors['red'])
 
 
 df= pd.read_csv("https://raw.githubusercontent.com/BVKC21/wintersport_projectje/master/data/df.csv",index_col=None,dtype={'Geslacht': 'category', 'Erg veel namen':  'category','Ik wil materiaal huren':  'category'})
@@ -41,16 +46,26 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets,title='Winte
 server = app.server
     
 app.layout = html.Div([
+# html.Img(src='assets/achtergrond.png'),
+
     html.Div(
         className="app-header",
         children=[
-            html.Div('Hi Fijne wintersportvrienden!', className="app-header--title")
+            html.Div('Welkom fijne wintersportvrienden!', className="app-header--title")
         ]
     ),
+    html.Br(),
+
     html.Div(className="app-base",
         children=html.Div([
             html.H5('Gaan we nou al op wintersport?',className="app-text--title" ),
-            html.Div(text,className="app-text--title")
+            html.Div(text[0],
+            className="app-text--title",
+            style={
+            'textAlign': 'center',
+            'color': text[1]
+        }
+            )
         ])
     ),
     
