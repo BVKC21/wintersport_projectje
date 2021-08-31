@@ -59,7 +59,7 @@ app.layout = html.Div([
         children=html.Div([
             html.H5('Gaan we nou al op wintersport?',className="app-text--title" ),
             html.Div(text[0],className=text[1]),
-            html.Img(src='assets/achtergrond.png',className="app-hero-image")
+#            html.Img(src='assets/achtergrond.png',className="app-hero-image")
         ])
     ),
     html.Br(),    
