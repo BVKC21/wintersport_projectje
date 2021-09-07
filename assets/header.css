@@ -10,11 +10,6 @@
 	width: 50%;
 	padding: 10px;
 	border-style: solid;
-	background-image: url('assets/achtergrond.png')
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: stretch;
-	position: relative;
 }
 
 .app-header--title {
