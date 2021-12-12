@@ -152,17 +152,17 @@ app.layout = html.Div([
     html.Br(),    
         
     html.Div(children=[
-        dcc.Graph(className= 'three columns',
+        dcc.Graph(className= 'six columns',
             id="graph1", 
             style={'display': 'inline-block'},
             figure=huren
             ),
-        dcc.Graph(className='three columns',
+        dcc.Graph(className='six columns',
             id="table", 
             style={'display': 'inline-block'},
             figure=table
             ),
-        dcc.Graph(className='three columns',
+        dcc.Graph(className='six columns',
             id="graph2", 
             style={'display': 'inline-block'},
             figure=violin
@@ -172,17 +172,17 @@ app.layout = html.Div([
     ),
     
     html.Div(children=[
-        dcc.Graph(className= 'three columns',
+        dcc.Graph(className= 'six columns',
             id="graph3", 
             style={'display': 'inline-block'},
             figure=artiest
             ),
-        dcc.Graph(className='three columns',
+        dcc.Graph(className='six columns',
             id="graph4", 
             style={'display': 'inline-block'},
             figure=hond_kat
             ),
-        dcc.Graph(className='three columns',
+        dcc.Graph(className='six columns',
             id="graph5", 
             style={'display': 'inline-block'},
             figure=stad
@@ -192,7 +192,7 @@ app.layout = html.Div([
     ),
     html.Br(),
     html.Div(children=[
-        dcc.Graph(className= 'one column',
+        dcc.Graph(className= 'six column',
             id="graph6", 
             style={'display': 'inline-block'},
             figure=lijn
