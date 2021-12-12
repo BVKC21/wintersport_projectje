@@ -41,7 +41,7 @@ dtype={'Skitag': 'float64',
 'extra_namen': 'int64',
 'films': 'float64',
 'flugel': 'float64',
-'geboortedatum': 'datetime64[ns]',
+
 'geslacht': 'int64',
 'kat_hond': 'float64',
 'kneipe': 'float64',
@@ -52,8 +52,8 @@ dtype={'Skitag': 'float64',
 'pre_ski_feestje': 'float64',
 'skistijl': 'float64',
 'stad': 'object',
-'tijdstempel': 'datetime64[ns]',
-'tosti': 'float64'}
+'tosti': 'float64'},
+parse_dates=['tijdstempel','geboortedatum']
 )
 
 waarden= pd.read_csv("https://raw.githubusercontent.com/BVKC21/wintersport_projectje/master/data/waarden.csv",
@@ -65,7 +65,6 @@ dtype={'Skitag': 'float64',
 'extra_namen': 'category',
 'films': 'category',
 'flugel': 'float64',
-'geboortedatum': 'datetime64[ns]',
 'geslacht': 'category',
 'kat_hond': 'category',
 'kneipe': 'float64',
@@ -76,8 +75,8 @@ dtype={'Skitag': 'float64',
 'pre_ski_feestje': 'float64',
 'skistijl': 'float64',
 'stad': 'category',
-'tijdstempel': 'datetime64[ns]',
-'tosti': 'category'}
+'tosti': 'category'},
+parse_dates=['tijdstempel','geboortedatum']
 )
 
 #Creeren grafieken 
