@@ -5,5 +5,5 @@ requests
 datetime
 Pillow
 dash
-plotly
+plotly==4.8.2
 pandas
