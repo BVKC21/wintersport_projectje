@@ -41,7 +41,7 @@ dtype={'Skitag': 'float64',
 'extra_namen': 'int64',
 'films': 'float64',
 'flugel': 'float64',
-'geboortedatum': 'datetime64[ns]',
+
 'geslacht': 'int64',
 'kat_hond': 'float64',
 'kneipe': 'float64',
@@ -52,8 +52,8 @@ dtype={'Skitag': 'float64',
 'pre_ski_feestje': 'float64',
 'skistijl': 'float64',
 'stad': 'object',
-'tijdstempel': 'datetime64[ns]',
-'tosti': 'float64'}
+'tosti': 'float64'},
+parse_dates=['tijdstempel','geboortedatum']
 )
 
 waarden= pd.read_csv("https://raw.githubusercontent.com/BVKC21/wintersport_projectje/master/data/waarden.csv",
@@ -65,7 +65,6 @@ dtype={'Skitag': 'float64',
 'extra_namen': 'category',
 'films': 'category',
 'flugel': 'float64',
-'geboortedatum': 'datetime64[ns]',
 'geslacht': 'category',
 'kat_hond': 'category',
 'kneipe': 'float64',
@@ -76,17 +75,56 @@ dtype={'Skitag': 'float64',
 'pre_ski_feestje': 'float64',
 'skistijl': 'float64',
 'stad': 'category',
-'tijdstempel': 'datetime64[ns]',
-'tosti': 'category'}
+'tosti': 'category'},
+parse_dates=['tijdstempel','geboortedatum']
 )
 
 #Creeren grafieken 
 huren = px.histogram(getallen, x="materiaal_huur", color='geslacht', title='Lekker huren')
 huren.update_layout(title_x=0.5)
+
 violin = px.violin(getallen, y="geboortedatum",box=True, points="all",title='Uit met alle leeftijden')
 violin.update_layout(title_x=0.5)
 
+sunburst = px.sunburst(waarden.dropna(), path=['stad','kat_hond', 'dal_piste_team','tosti'], color= 'stad', title= 'Hoe kom ik erachter wat iemand bij zijn tosti wil?')
+sunburst.update_layout(title_x=0.5)
 
+artiest = px.histogram(waarden.dropna(), x="artiest",color="geslacht")
+artiest.update_layout(title_x=0.5)
+
+hond_kat = px.histogram(waarden.dropna(), x="kat_hond",color="geslacht",title='Honden of katten mensen, wat zijn we?')
+hond_kat.update_layout(title_x=0.5)
+
+line_chart = getallen[['tijdstempel', 'leeftijd', 'artiest', 'geslacht']].sort_values('tijdstempel').copy()
+line_chart.index = line_chart.tijdstempel
+line_chart.drop('tijdstempel',axis=1,inplace=True)
+line_chart['cum_avg_mean']= line_chart.leeftijd.expanding().mean().round(2)
+line_chart.dropna(inplace=True)
+lijn = px.line(line_chart.reset_index(), x="tijdstempel", y="cum_avg_mean",color='geslacht', title='Wanneer is de vragenlijst ingevuld tov de leeftijd')
+lijn.update_layout(title_x=0.5)
+
+stad = px.histogram(waarden.dropna(), x="stad").update_xaxes(categoryorder='total descending')
+stad.update_layout(title_x=0.5)
+
+table = go.Figure(data=[go.Table(
+    columnorder = [1,2,3],
+    columnwidth = [20,60,20],
+    header=dict(values=['<b>Wat</b>', '<b>De schaal van 0 tot 5 in woord</b>','<b>Gemiddelde</b>'],
+                line_color='steelblue',
+                fill_color='steelblue',
+                font = dict(color = 'white', size = 13),
+                align='left'),
+    cells=dict(values=[['Avondeten', 'Flugel', 'Die Kneipe', 'Skistijl', 'Skidag', 'Lezen', 'Pre skifeest'], # 1st column
+    ['Kebab - Fine dining', 'Alleen - Dapper in het midden ', 'Dansschoenen aan- Alleen op skischuhe', 'Groen - Zwart ', 'Zon, Zneeuw, Zuipen - Eerste lift', 'Lezen? - Belezen', 'Geen polonaise - Meid ik moet door!!'], # 2nd column 
+    waarden.mean().values[:-1]], # 3nd column
+    line_color='white',
+    fill_color='white',
+    align='left',
+    font=dict(color='black', size=12)))
+])
+table.update_layout(width=800, height=355)
+
+#tekst voor het uitrekenen maken
 text = create_text('2022-03-16')
 
 #creeren app
@@ -131,4 +169,3 @@ app.layout = html.Div([
 
 if __name__ == '__main__':
     app.run_server(debug=False)
-
