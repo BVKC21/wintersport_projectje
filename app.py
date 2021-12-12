@@ -31,16 +31,65 @@ def create_text(vertrekdatum):
     else:
         return (c,colors['red'])
 
+# inladen dataframes
+getallen= pd.read_csv("https://raw.githubusercontent.com/BVKC21/wintersport_projectje/master/data/getallen.csv",
+index_col=None,
+dtype={'Skitag': 'float64',
+'artiest': 'float64',
+'avondeten': 'float64',
+'dal_piste_team': 'float64',
+'extra_namen': 'int64',
+'films': 'float64',
+'flugel': 'float64',
+'geboortedatum': 'datetime64[ns]',
+'geslacht': 'int64',
+'kat_hond': 'float64',
+'kneipe': 'float64',
+'leeftijd': 'float64',
+'lezen': 'float64',
+'materiaal_huur': 'object',
+'muziek': 'float64',
+'pre_ski_feestje': 'float64',
+'skistijl': 'float64',
+'stad': 'object',
+'tijdstempel': 'datetime64[ns]',
+'tosti': 'float64'}
+)
 
-df= pd.read_csv("https://raw.githubusercontent.com/BVKC21/wintersport_projectje/master/data/df.csv",index_col=None,dtype={'Geslacht': 'category', 'Erg veel namen':  'category','Ik wil materiaal huren':  'category'})
-fig1 = px.histogram(df, x="Ik wil materiaal huren", color='Geslacht', title='Lekker huren')
-fig1.update_layout(title_x=0.5)
-fig2 = px.violin(df, y="Geboortedatum",box=True, points="all",title='Uit met alle leeftijden')
-fig2.update_layout(title_x=0.5)
+waarden= pd.read_csv("https://raw.githubusercontent.com/BVKC21/wintersport_projectje/master/data/waarden.csv",
+index_col=None,
+dtype={'Skitag': 'float64',
+'artiest': 'category',
+'avondeten': 'float64',
+'dal_piste_team': 'category',
+'extra_namen': 'category',
+'films': 'category',
+'flugel': 'float64',
+'geboortedatum': 'datetime64[ns]',
+'geslacht': 'category',
+'kat_hond': 'category',
+'kneipe': 'float64',
+'leeftijd': 'float64',
+'lezen': 'float64',
+'materiaal_huur': 'category',
+'muziek': 'category',
+'pre_ski_feestje': 'float64',
+'skistijl': 'float64',
+'stad': 'category',
+'tijdstempel': 'datetime64[ns]',
+'tosti': 'category'}
+)
+
+#Creeren grafieken 
+huren = px.histogram(getallen, x="materiaal_huur", color='geslacht', title='Lekker huren')
+huren.update_layout(title_x=0.5)
+violin = px.violin(getallen, y="geboortedatum",box=True, points="all",title='Uit met alle leeftijden')
+violin.update_layout(title_x=0.5)
 
 
 text = create_text('2022-03-16')
 
+#creeren app
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets,title='Wintersport 2022')
 
 server = app.server
@@ -69,12 +118,12 @@ app.layout = html.Div([
         dcc.Graph(className= 'six columns',
             id="graph1", 
             style={'display': 'inline-block'},
-            figure=fig1
+            figure=huren
             ),
         dcc.Graph(className='six columns',
             id="graph2", 
             style={'display': 'inline-block'},
-            figure=fig2
+            figure=violin
             )
     ])
     
