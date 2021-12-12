@@ -82,10 +82,17 @@ parse_dates=['tijdstempel','geboortedatum']
 #Creeren grafieken 
 huren = px.histogram(getallen, x="materiaal_huur", color='geslacht', title='Lekker huren')
 huren.update_layout(title_x=0.5)
+
 violin = px.violin(getallen, y="geboortedatum",box=True, points="all",title='Uit met alle leeftijden')
 violin.update_layout(title_x=0.5)
 
+sunburst = px.sunburst(waarden.dropna(), path=['stad','kat_hond', 'dal_piste_team','tosti'], color= 'stad', title= 'Hoe kom ik erachter wat iemand bij zijn tosti wil?')
+sunburst.update_layout(title_x=0.5)
 
+artiest = px.histogram(waarden.dropna(), x="artiest",color="geslacht")
+artiest.update_layout(title_x=0.5)
+
+#tekst voor het uitrekenen maken
 text = create_text('2022-03-16')
 
 #creeren app
