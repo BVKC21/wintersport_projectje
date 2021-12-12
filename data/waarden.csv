@@ -1,28 +1,28 @@
-,tijdstempel,avondeten,flugel,kneipe,skistijl,Skitag,lezen,pre_ski_feestje,artiest,dal_piste_team,kat_hond,films,muziek,tosti,stad,geslacht,extra_namen,leeftijd,materiaal_huur
-0,2021-11-15 12:27:06.716,2.0,3.0,5.0,5.0,3.0,4.0,5.0,Stefan Sturmer,Piste,Hond,Zonder,De jeugd van tegenwoordig,Ketchup,Amsterdam,M,Ja,29.78082191780822,Nee
-1,2021-11-15 12:29:46.000,4.0,3.0,3.0,1.0,2.0,4.0,4.0,Matty Valentino,Dal,Hond,Zonder,De jeugd van tegenwoordig,Ketchup,Den Haaaag,V,Ja,25.0,"Ja ski's, skischoenen en helm"
-2,2021-11-15 12:52:19.492,5.0,4.0,5.0,5.0,4.0,5.0,5.0,Matty Valentino,Piste,Hond,Zonder,De jeugd van tegenwoordig,Ketchup,Amsterdam,V,Ja,27.895890410958906,Nee
-3,2021-11-15 12:55:27.841,4.0,5.0,4.0,4.0,4.0,3.0,5.0,Stefan Sturmer,Piste,Hond,Met,De jeugd van tegenwoordig,Ketchup,Amsterdam,M,Ja,28.654794520547945,"Ja, ski's en skischoenen"
-4,2021-11-15 13:12:36.322,5.0,5.0,4.0,2.0,4.0,3.0,4.0,Matty Valentino,Piste,Hond,Zonder,De jeugd van tegenwoordig,Ketchup,Utrecht,M,Nee,36.24657534246575,"Ja, ski's en skischoenen"
-5,2021-11-15 13:35:13.294,3.0,2.0,2.0,2.0,2.0,4.0,5.0,Matty Valentino,Piste,Hond,Zonder,De jeugd van tegenwoordig,Curry,Beide prima! ,V,Ja,25.517808219178082,"Ja, ski's en skischoenen"
-6,2021-11-15 13:45:26.680,3.0,3.0,2.0,1.0,2.0,3.0,2.0,Matty Valentino,Piste,Hond,Zonder,The opposites,Ketchup,Amsterdam,V,Nee,41.31780821917808,"Ja, ski's"
-7,2021-11-15 14:57:08.310,1.0,4.0,3.0,2.0,5.0,4.0,5.0,Stefan Sturmer,Piste,Hond,Zonder,The opposites,Curry,Volgens mij mag je nu wel een feest organiseren zolang er maar niemand komt ,M,Nee,25.04931506849315,"Ja, ski's"
-8,2021-11-15 15:03:49.086,3.0,5.0,4.0,2.0,1.0,1.0,5.0,Matty Valentino,Piste,Hond,Zonder,De jeugd van tegenwoordig,Curry,Amsterdam,V,Nee,32.52602739726027,Nee
-9,2021-11-15 17:43:37.803,4.0,5.0,3.0,4.0,2.0,3.0,5.0,Matty Valentino,Piste,Hond,Zonder,De jeugd van tegenwoordig,Ketchup,Amsterdam,V,Ja,27.854794520547944,"Ja, ski's en skischoenen"
-10,2021-11-15 18:37:50.353,5.0,5.0,5.0,4.0,1.0,3.0,5.0,Stefan Sturmer,Piste,Kat,Met,De jeugd van tegenwoordig,Ketchup,Utrecht,V,Nee,31.484931506849314,Nee
-11,2021-11-15 18:48:40.035,5.0,1.0,3.0,3.0,2.0,3.0,4.0,Stefan Sturmer,Piste,Hond,Zonder,The opposites,Curry,Amsterdam,V,Ja,59.0,Nee
-12,2021-11-15 20:10:23.355,5.0,5.0,5.0,1.0,1.0,3.0,5.0,Stefan Sturmer,Dal,Hond,Zonder,De jeugd van tegenwoordig,Ketchup,Amsterdam,M,Ja,30.676712328767124,"Ja, ski's en helm"
-13,2021-11-16 07:44:07.371,2.0,4.0,1.0,5.0,4.0,4.0,5.0,Stefan Sturmer,Piste,Hond,Zonder,De jeugd van tegenwoordig,Curry,Amsterdam,M,Ja,29.75068493150685,Ja alleen schoenen
-14,2021-11-16 09:25:10.635,1.0,5.0,1.0,2.0,2.0,2.0,5.0,Stefan Sturmer,Dal,Hond,Met,De jeugd van tegenwoordig,Curry,Amsterdam,M,Ja,32.52876712328767,"Ja, ski's en skischoenen"
-15,2021-11-16 10:07:15.921,2.0,2.0,4.0,4.0,2.0,2.0,5.0,Matty Valentino,Piste,Hond,Met,De jeugd van tegenwoordig,Curry,Amsterdam,V,Ja,39.13972602739726,Nee
-16,2021-11-16 10:13:11.642,1.0,5.0,5.0,3.0,1.0,3.0,5.0,Matty Valentino,Piste,Hond,Zonder,De jeugd van tegenwoordig,Ketchup,Amsterdam,V,Ja,31.353424657534248,Nee
-17,2021-11-16 15:53:11.198,3.0,5.0,4.0,4.0,4.0,3.0,5.0,Matty Valentino,Piste,Kat,Zonder,De jeugd van tegenwoordig,Ketchup,Amsterdam,M,Nee,44.55068493150685,Nee
-18,2021-11-17 18:29:14.805,1.0,5.0,3.0,3.0,1.0,1.0,5.0,Matty Valentino,Dal,Hond,Zonder,De jeugd van tegenwoordig,Curry,Amsterdam,V,Ja,31.802739726027397,Nee
-19,2021-11-17 20:08:40.235,3.0,4.0,3.0,5.0,3.0,3.0,5.0,Matty Valentino,Piste,Hond,Met,De jeugd van tegenwoordig,Ketchup,Utrecht,M,Nee,27.304109589041097,"Ja, ski's en skischoenen"
-20,2021-11-18 09:30:36.613,3.0,3.0,5.0,2.0,5.0,5.0,5.0,Stefan Sturmer,Piste,Hond,Zonder,De jeugd van tegenwoordig,Ketchup,Utrecht,V,Nee,27.367123287671234,"Ja, ski's"
-21,2021-11-19 14:32:30.764,4.0,5.0,1.0,1.0,1.0,3.0,5.0,Matty Valentino,Dal,Hond,Zonder,De jeugd van tegenwoordig,Ketchup,Utrecht,V,Nee,25.70958904109589,"Ja, ski's en skischoenen"
-22,2021-11-19 14:48:55.420,3.0,1.0,3.0,3.0,4.0,5.0,5.0,Matty Valentino,Piste,Hond,Zonder,De jeugd van tegenwoordig,Ketchup,Amsterdam,V,Ja,29.7013698630137,"Ja, ski's en skischoenen"
-23,2021-11-19 17:13:34.304,2.0,5.0,3.0,1.0,1.0,5.0,3.0,Matty Valentino,Dal,Hond,Zonder,De jeugd van tegenwoordig,Curry,Amsterdam,V,Ja,31.2986301369863,"Ja, ski's"
-24,2021-12-02 09:35:27.013,2.0,5.0,5.0,2.0,1.0,3.0,4.0,Stefan Sturmer,Piste,Kat,Met,The opposites,Ketchup,Utrecht,M,Ja,25.326027397260273,"Ja, snowboard en schoenen"
-25,,,,,,,,,Matty Valentino,Dal,Hond,Met,De jeugd van tegenwoordig,Curry,Amsterdam,M,Ja,33.44931506849315,Nee
-26,,,,,,,,,,,,,,,,V,Ja,32.45479452054794,Nee
+,tijdstempel,avondeten,flugel,kneipe,skistijl,Skitag,lezen,pre_ski_feestje,artiest,dal_piste_team,kat_hond,films,muziek,tosti,stad,geslacht,extra_namen,geboortedatum,leeftijd,materiaal_huur
+0,2021-11-15 12:27:06.716,2.0,3.0,5.0,5.0,3.0,4.0,5.0,Stefan Sturmer,Piste,Hond,Zonder,De jeugd van tegenwoordig,Ketchup,Amsterdam,M,Ja,1992-03-09 00:00:00.000,29.78082191780822,Nee
+1,2021-11-15 12:29:46.000,4.0,3.0,3.0,1.0,2.0,4.0,4.0,Matty Valentino,Dal,Hond,Zonder,De jeugd van tegenwoordig,Ketchup,Den Haaaag,V,Ja,1996-12-18 00:00:00.000,25.0,"Ja ski's, skischoenen en helm"
+2,2021-11-15 12:52:19.492,5.0,4.0,5.0,5.0,4.0,5.0,5.0,Matty Valentino,Piste,Hond,Zonder,De jeugd van tegenwoordig,Ketchup,Amsterdam,V,Ja,1994-01-26 00:00:00.000,27.895890410958906,Nee
+3,2021-11-15 12:55:27.841,4.0,5.0,4.0,4.0,4.0,3.0,5.0,Stefan Sturmer,Piste,Hond,Met,De jeugd van tegenwoordig,Ketchup,Amsterdam,M,Ja,1993-04-24 00:00:00.000,28.654794520547945,"Ja, ski's en skischoenen"
+4,2021-11-15 13:12:36.322,5.0,5.0,4.0,2.0,4.0,3.0,4.0,Matty Valentino,Piste,Hond,Zonder,De jeugd van tegenwoordig,Ketchup,Utrecht,M,Nee,1985-09-22 00:00:00.000,36.24657534246575,"Ja, ski's en skischoenen"
+5,2021-11-15 13:35:13.294,3.0,2.0,2.0,2.0,2.0,4.0,5.0,Matty Valentino,Piste,Hond,Zonder,De jeugd van tegenwoordig,Curry,Beide prima! ,V,Ja,1996-06-12 00:00:00.000,25.517808219178082,"Ja, ski's en skischoenen"
+6,2021-11-15 13:45:26.680,3.0,3.0,2.0,1.0,2.0,3.0,2.0,Matty Valentino,Piste,Hond,Zonder,The opposites,Ketchup,Amsterdam,V,Nee,1980-08-28 00:00:00.000,41.31780821917808,"Ja, ski's"
+7,2021-11-15 14:57:08.310,1.0,4.0,3.0,2.0,5.0,4.0,5.0,Stefan Sturmer,Piste,Hond,Zonder,The opposites,Curry,Volgens mij mag je nu wel een feest organiseren zolang er maar niemand komt ,M,Nee,1996-11-30 00:00:00.000,25.04931506849315,"Ja, ski's"
+8,2021-11-15 15:03:49.086,3.0,5.0,4.0,2.0,1.0,1.0,5.0,Matty Valentino,Piste,Hond,Zonder,De jeugd van tegenwoordig,Curry,Amsterdam,V,Nee,1989-06-11 00:00:00.000,32.52602739726027,Nee
+9,2021-11-15 17:43:37.803,4.0,5.0,3.0,4.0,2.0,3.0,5.0,Matty Valentino,Piste,Hond,Zonder,De jeugd van tegenwoordig,Ketchup,Amsterdam,V,Ja,1994-02-10 00:00:00.000,27.854794520547944,"Ja, ski's en skischoenen"
+10,2021-11-15 18:37:50.353,5.0,5.0,5.0,4.0,1.0,3.0,5.0,Stefan Sturmer,Piste,Kat,Met,De jeugd van tegenwoordig,Ketchup,Utrecht,V,Nee,1990-06-26 00:00:00.000,31.484931506849314,Nee
+11,2021-11-15 18:48:40.035,5.0,1.0,3.0,3.0,2.0,3.0,4.0,Stefan Sturmer,Piste,Hond,Zonder,The opposites,Curry,Amsterdam,V,Ja,1962-12-27 00:00:00.000,59.0,Nee
+12,2021-11-15 20:10:23.355,5.0,5.0,5.0,1.0,1.0,3.0,5.0,Stefan Sturmer,Dal,Hond,Zonder,De jeugd van tegenwoordig,Ketchup,Amsterdam,M,Ja,1991-04-17 00:00:00.000,30.676712328767124,"Ja, ski's en helm"
+13,2021-11-16 07:44:07.371,2.0,4.0,1.0,5.0,4.0,4.0,5.0,Stefan Sturmer,Piste,Hond,Zonder,De jeugd van tegenwoordig,Curry,Amsterdam,M,Ja,1992-03-20 00:00:00.000,29.75068493150685,Ja alleen schoenen
+14,2021-11-16 09:25:10.635,1.0,5.0,1.0,2.0,2.0,2.0,5.0,Stefan Sturmer,Dal,Hond,Met,De jeugd van tegenwoordig,Curry,Amsterdam,M,Ja,1989-06-10 00:00:00.000,32.52876712328767,"Ja, ski's en skischoenen"
+15,2021-11-16 10:07:15.921,2.0,2.0,4.0,4.0,2.0,2.0,5.0,Matty Valentino,Piste,Hond,Met,De jeugd van tegenwoordig,Curry,Amsterdam,V,Ja,1982-11-01 00:00:00.000,39.13972602739726,Nee
+16,2021-11-16 10:13:11.642,1.0,5.0,5.0,3.0,1.0,3.0,5.0,Matty Valentino,Piste,Hond,Zonder,De jeugd van tegenwoordig,Ketchup,Amsterdam,V,Ja,1990-08-13 00:00:00.000,31.353424657534248,Nee
+17,2021-11-16 15:53:11.198,3.0,5.0,4.0,4.0,4.0,3.0,5.0,Matty Valentino,Piste,Kat,Zonder,De jeugd van tegenwoordig,Ketchup,Amsterdam,M,Nee,1977-06-05 00:00:00.000,44.55068493150685,Nee
+18,2021-11-17 18:29:14.805,1.0,5.0,3.0,3.0,1.0,1.0,5.0,Matty Valentino,Dal,Hond,Zonder,De jeugd van tegenwoordig,Curry,Amsterdam,V,Ja,1990-03-02 00:00:00.000,31.802739726027397,Nee
+19,2021-11-17 20:08:40.235,3.0,4.0,3.0,5.0,3.0,3.0,5.0,Matty Valentino,Piste,Hond,Met,De jeugd van tegenwoordig,Ketchup,Utrecht,M,Nee,1994-08-30 00:00:00.000,27.304109589041097,"Ja, ski's en skischoenen"
+20,2021-11-18 09:30:36.613,3.0,3.0,5.0,2.0,5.0,5.0,5.0,Stefan Sturmer,Piste,Hond,Zonder,De jeugd van tegenwoordig,Ketchup,Utrecht,V,Nee,1994-08-07 00:00:00.000,27.367123287671234,"Ja, ski's"
+21,2021-11-19 14:32:30.764,4.0,5.0,1.0,1.0,1.0,3.0,5.0,Matty Valentino,Dal,Hond,Zonder,De jeugd van tegenwoordig,Ketchup,Utrecht,V,Nee,1996-04-03 00:00:00.000,25.70958904109589,"Ja, ski's en skischoenen"
+22,2021-11-19 14:48:55.420,3.0,1.0,3.0,3.0,4.0,5.0,5.0,Matty Valentino,Piste,Hond,Zonder,De jeugd van tegenwoordig,Ketchup,Amsterdam,V,Ja,1992-04-07 00:00:00.000,29.7013698630137,"Ja, ski's en skischoenen"
+23,2021-11-19 17:13:34.304,2.0,5.0,3.0,1.0,1.0,5.0,3.0,Matty Valentino,Dal,Hond,Zonder,De jeugd van tegenwoordig,Curry,Amsterdam,V,Ja,1990-09-02 00:00:00.000,31.2986301369863,"Ja, ski's"
+24,2021-12-02 09:35:27.013,2.0,5.0,5.0,2.0,1.0,3.0,4.0,Stefan Sturmer,Piste,Kat,Met,The opposites,Ketchup,Utrecht,M,Ja,1996-08-21 00:00:00.000,25.326027397260273,"Ja, snowboard en schoenen"
+25,,,,,,,,,Matty Valentino,Dal,Hond,Met,De jeugd van tegenwoordig,Curry,Amsterdam,M,Ja,1988-07-09 00:00:00.000,33.44931506849315,Nee
+26,,,,,,,,,,,,,,,,V,Ja,1989-07-07 00:00:00.000,32.45479452054794,Nee
