@@ -80,7 +80,7 @@ parse_dates=['tijdstempel','geboortedatum']
 )
 
 #Creeren grafieken 
-huren = px.histogram(getallen, x="materiaal_huur", color='geslacht', title='Lekker huren')
+huren = px.histogram(waarden, x="materiaal_huur", color='geslacht', title='Lekker huren')
 huren.update_layout(title_x=0.5)
 
 violin = px.violin(getallen, y="geboortedatum",box=True, points="all",title='Uit met alle leeftijden')
@@ -89,13 +89,13 @@ violin.update_layout(title_x=0.5)
 sunburst = px.sunburst(waarden.dropna(), path=['stad','kat_hond', 'dal_piste_team','tosti'], color= 'stad', title= 'Hoe kom ik erachter wat iemand bij zijn tosti wil?')
 sunburst.update_layout(title_x=0.5)
 
-artiest = px.histogram(waarden.dropna(), x="artiest",color="geslacht")
+artiest = px.histogram(waarden.dropna(), x="artiest",color="geslacht",title= 'Wat is onze favoriete artiest')
 artiest.update_layout(title_x=0.5)
 
 hond_kat = px.histogram(waarden.dropna(), x="kat_hond",color="geslacht",title='Honden of katten mensen, wat zijn we?')
 hond_kat.update_layout(title_x=0.5)
 
-line_chart = getallen[['tijdstempel', 'leeftijd', 'artiest', 'geslacht']].sort_values('tijdstempel').copy()
+line_chart = waarden[['tijdstempel', 'leeftijd', 'artiest', 'geslacht']].sort_values('tijdstempel').copy()
 line_chart.index = line_chart.tijdstempel
 line_chart.drop('tijdstempel',axis=1,inplace=True)
 line_chart['cum_avg_mean']= line_chart.leeftijd.expanding().mean().round(2)
@@ -152,39 +152,47 @@ app.layout = html.Div([
     html.Br(),    
         
     html.Div(children=[
-        dcc.Graph(className= 'six columns',
+        dcc.Graph(className= 'three columns',
             id="graph1", 
             style={'display': 'inline-block'},
             figure=huren
             ),
-        dcc.Graph(className='six columns',
+        dcc.Graph(className='three columns',
+            id="table", 
+            style={'display': 'inline-block'},
+            figure=table
+            ),
+        dcc.Graph(className='three columns',
             id="graph2", 
             style={'display': 'inline-block'},
             figure=violin
             )
-    ]),
-    html.Br(),    
+    ],
+    className="row"
+    ),
     
     html.Div(children=[
-        dcc.Graph(className= 'six columns',
+        dcc.Graph(className= 'three columns',
             id="graph3", 
             style={'display': 'inline-block'},
             figure=artiest
             ),
-        dcc.Graph(className='six columns',
+        dcc.Graph(className='three columns',
             id="graph4", 
             style={'display': 'inline-block'},
             figure=hond_kat
             ),
-        dcc.Graph(className='six columns',
+        dcc.Graph(className='three columns',
             id="graph5", 
             style={'display': 'inline-block'},
             figure=stad
             )
-    ]),
+    ],
+    className="row"
+    ),
     html.Br(),
     html.Div(children=[
-        dcc.Graph(className= 'six columns',
+        dcc.Graph(className= 'one column',
             id="graph6", 
             style={'display': 'inline-block'},
             figure=lijn
