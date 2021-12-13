@@ -55,7 +55,7 @@ dtype={'Skitag': 'float64',
 'tosti': 'float64'},
 parse_dates=['tijdstempel','geboortedatum']
 )
-getallen.drop('Unnamed: 0', inplace=True)
+getallen.drop('Unnamed: 0',axis=1, inplace=True)
 
 waarden= pd.read_csv("https://raw.githubusercontent.com/BVKC21/wintersport_projectje/master/data/waarden.csv",
 index_col=None,
@@ -79,7 +79,7 @@ dtype={'Skitag': 'float64',
 'tosti': 'category'},
 parse_dates=['tijdstempel','geboortedatum']
 )
-waarden.drop('Unnamed: 0', inplace=True)
+waarden.drop('Unnamed: 0', axis=1, inplace=True)
 
 #Creeren grafieken 
 huren = px.histogram(waarden, x="materiaal_huur", color='geslacht', title='Lekker huren',labels=dict(x="Type verhuur", y="Aantal personen", color="Geslacht"))
