@@ -55,6 +55,7 @@ dtype={'Skitag': 'float64',
 'tosti': 'float64'},
 parse_dates=['tijdstempel','geboortedatum']
 )
+getallen.drop('Unnamed: 0', inplace=True)
 
 waarden= pd.read_csv("https://raw.githubusercontent.com/BVKC21/wintersport_projectje/master/data/waarden.csv",
 index_col=None,
@@ -78,21 +79,33 @@ dtype={'Skitag': 'float64',
 'tosti': 'category'},
 parse_dates=['tijdstempel','geboortedatum']
 )
+waarden.drop('Unnamed: 0', inplace=True)
 
 #Creeren grafieken 
-huren = px.histogram(waarden, x="materiaal_huur", color='geslacht', title='Lekker huren')
+huren = px.histogram(waarden, x="materiaal_huur", color='geslacht', title='Lekker huren',labels=dict(x="Type verhuur", y="Aantal personen", color="Geslacht"))
 huren.update_layout(title_x=0.5)
 
-violin = px.violin(getallen, y="geboortedatum",box=True, points="all",title='Uit met alle leeftijden')
+violin = px.violin(getallen, y="geboortedatum",box=True, points="all",title='Uit met alle leeftijden',labels=dict(y="Geboortedatum"))
 violin.update_layout(title_x=0.5)
 
-sunburst = px.sunburst(waarden.dropna(), path=['stad','kat_hond', 'dal_piste_team','tosti'], color= 'stad', title= 'Hoe kom ik erachter wat iemand bij zijn tosti wil?')
+sunburst = px.sunburst(waarden.dropna(), path=['stad','kat_hond', 'dal_piste_team','tosti'], 
+color= 'stad', 
+title= 'Hoe kom ik erachter wat iemand bij zijn tosti wil?'
+)
 sunburst.update_layout(title_x=0.5)
 
-artiest = px.histogram(waarden.dropna(), x="artiest",color="geslacht",title= 'Wat is onze favoriete artiest')
+artiest = px.histogram(waarden.dropna(), x="artiest",
+color="geslacht",
+title= 'Wat is onze favoriete artiest',
+labels=dict(x='Artiest', y='Fans!', color= 'Geslacht'))
 artiest.update_layout(title_x=0.5)
 
-hond_kat = px.histogram(waarden.dropna(), x="kat_hond",color="geslacht",title='Honden of katten mensen, wat zijn we?')
+
+hond_kat = px.histogram(waarden.dropna(), x="kat_hond",
+color="geslacht",
+title='Honden of katten mensen, wat zijn we?',
+labels=dict(x='Voorkeursbeestje', y='Aantal personen', color= 'Geslacht')
+)
 hond_kat.update_layout(title_x=0.5)
 
 line_chart = waarden[['tijdstempel', 'leeftijd', 'artiest', 'geslacht']].sort_values('tijdstempel').copy()
@@ -105,6 +118,7 @@ lijn.update_layout(title_x=0.5)
 
 stad = px.histogram(waarden.dropna(), x="stad").update_xaxes(categoryorder='total descending',title='Waar vier je nou een feestje?')
 stad.update_layout(title_x=0.5)
+stad.update_xaxes(tickangle=n_clicks*45)
 
 table = go.Figure(data=[go.Table(
     columnorder = [1,2,3],
