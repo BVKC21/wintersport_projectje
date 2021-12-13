@@ -118,7 +118,7 @@ lijn.update_layout(title_x=0.5)
 
 stad = px.histogram(waarden.dropna(), x="stad").update_xaxes(categoryorder='total descending',title='Waar vier je nou een feestje?')
 stad.update_layout(title_x=0.5)
-stad.update_xaxes(tickangle=n_clicks*45)
+stad.update_xaxes(tickangle=45)
 
 table = go.Figure(data=[go.Table(
     columnorder = [1,2,3],
