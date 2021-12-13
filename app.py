@@ -103,7 +103,7 @@ line_chart.dropna(inplace=True)
 lijn = px.line(line_chart.reset_index(), x="tijdstempel", y="cum_avg_mean",color='geslacht', title='Wanneer is de vragenlijst ingevuld tov de leeftijd')
 lijn.update_layout(title_x=0.5)
 
-stad = px.histogram(waarden.dropna(), x="stad").update_xaxes(categoryorder='total descending')
+stad = px.histogram(waarden.dropna(), x="stad").update_xaxes(categoryorder='total descending',title='Waar vier je nou een feestje?')
 stad.update_layout(title_x=0.5)
 
 table = go.Figure(data=[go.Table(
@@ -152,15 +152,20 @@ app.layout = html.Div([
 #            html.Img(src='assets/achtergrond.png',className="app-hero-image")
         ])
     ),
-    html.Br(),    
-    html.H5('Hoe kom ik er toch achter of iemand een tosti met curry of ketchupw wil?',className="app-text--title" ),       
+    
     html.Br(),
     html.Div(children=[
-    dcc.Graph(className= 'twelve columns',
+    dcc.Graph(className= 'four columns',
         id="graph7", 
         style={'display': 'inline-block'},
         figure=sunburst
         ),
+    dcc.Graph(className= 'eight columns',
+        id="graph6", 
+        style={'display': 'inline-block'},
+        figure=lijn
+        )
+    
         ]
     ),
 
@@ -203,16 +208,7 @@ app.layout = html.Div([
     className="row"
     ),
     
-    html.Br(),
-    html.Div(children=[
-        dcc.Graph(className= 'twelve columns',
-            id="graph6", 
-            style={'display': 'inline-block'},
-            figure=lijn
-            )
-    ])
-
-    
+    html.Br(), 
 ])
 
 if __name__ == '__main__':
