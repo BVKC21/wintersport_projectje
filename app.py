@@ -118,6 +118,7 @@ lijn.update_layout(title_x=0.5)
 
 stad = px.histogram(waarden[waarden.stad !='Volgens mij mag je nu wel een feest organiseren zolang er maar niemand komt '].dropna(), x="stad").update_xaxes(categoryorder='total descending',title='Waar vier je nou een feestje?')
 stad.update_layout(title_x=0.5)
+stad.update_xaxes(tickangle=45)
 
 table = go.Figure(data=[go.Table(
     columnorder = [1,2,3],
@@ -135,6 +136,7 @@ table = go.Figure(data=[go.Table(
     align='left',
     font=dict(color='black', size=12)))
 ])
+table.update_layout(width=800, height=355)
 
 sunburst = px.sunburst(waarden.dropna(), path=['stad','kat_hond', 'dal_piste_team','tosti'], color= 'stad', title= 'Hoe kom ik erachter wat iemand bij zijn tosti wil?')
 sunburst.update_layout(title_x=0.5)
@@ -172,13 +174,12 @@ app.layout = html.Div([
         style={'display': 'inline-block'},
         figure=sunburst
         ),
-    dcc.Graph(className= 'eight columns',
-        id="graph6", 
-        style={'display': 'inline-block'},
-        figure=lijn
-        )
-    
-        ]
+    dcc.Graph(className='eight columns',
+            id="table", 
+            style={'display': 'inline-block'},
+            figure=table
+            )
+    ]
     ),
 
     html.Div(children=[
@@ -206,11 +207,11 @@ app.layout = html.Div([
             style={'display': 'inline-block'},
             figure=huren
             ),
-        dcc.Graph(className='four columns',
-            id="table", 
-            style={'display': 'inline-block'},
-            figure=table
-            ),
+        dcc.Graph(className= 'four columns',
+        id="graph6", 
+        style={'display': 'inline-block'},
+        figure=lijn
+        ),    
         dcc.Graph(className='four columns',
             id="graph2", 
             style={'display': 'inline-block'},
