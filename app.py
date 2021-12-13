@@ -124,6 +124,9 @@ table = go.Figure(data=[go.Table(
 ])
 table.update_layout(width=800, height=355)
 
+sunburst = px.sunburst(waarden.dropna(), path=['stad','kat_hond', 'dal_piste_team','tosti'], color= 'stad', title= 'Hoe kom ik erachter wat iemand bij zijn tosti wil?')
+sunburst.update_layout(title_x=0.5)
+
 #tekst voor het uitrekenen maken
 text = create_text('2022-03-16')
 
@@ -150,19 +153,48 @@ app.layout = html.Div([
         ])
     ),
     html.Br(),    
-        
+    html.H5('Hoe kom ik er toch achter of iemand een tosti met curry of ketchupw wil?',className="app-text--title" ),       
+    html.Br(),
     html.Div(children=[
-        dcc.Graph(className= 'six columns',
+    dcc.Graph(className= 'twelve columns',
+        id="graph7", 
+        style={'display': 'inline-block'},
+        figure=sunburst
+        ),
+        ]
+    ),
+
+    html.Div(children=[
+    dcc.Graph(className= 'four columns',
+        id="graph3", 
+        style={'display': 'inline-block'},
+        figure=artiest
+        ),
+    dcc.Graph(className='four columns',
+        id="graph4", 
+        style={'display': 'inline-block'},
+        figure=hond_kat
+        ),
+    dcc.Graph(className='four columns',
+        id="graph5", 
+        style={'display': 'inline-block'},
+        figure=stad
+        )
+],
+    className="row"
+    ),    
+    html.Div(children=[
+        dcc.Graph(className= 'four columns',
             id="graph1", 
             style={'display': 'inline-block'},
             figure=huren
             ),
-        dcc.Graph(className='six columns',
+        dcc.Graph(className='four columns',
             id="table", 
             style={'display': 'inline-block'},
             figure=table
             ),
-        dcc.Graph(className='six columns',
+        dcc.Graph(className='four columns',
             id="graph2", 
             style={'display': 'inline-block'},
             figure=violin
@@ -171,28 +203,9 @@ app.layout = html.Div([
     className="row"
     ),
     
-    html.Div(children=[
-        dcc.Graph(className= 'six columns',
-            id="graph3", 
-            style={'display': 'inline-block'},
-            figure=artiest
-            ),
-        dcc.Graph(className='six columns',
-            id="graph4", 
-            style={'display': 'inline-block'},
-            figure=hond_kat
-            ),
-        dcc.Graph(className='six columns',
-            id="graph5", 
-            style={'display': 'inline-block'},
-            figure=stad
-            )
-    ],
-    className="row"
-    ),
     html.Br(),
     html.Div(children=[
-        dcc.Graph(className= 'six column',
+        dcc.Graph(className= 'twelve columns',
             id="graph6", 
             style={'display': 'inline-block'},
             figure=lijn
