@@ -107,7 +107,20 @@ title='Honden of katten mensen, wat zijn we?',
 labels=dict(x='Voorkeursbeestje', y='Aantal personen', color= 'Geslacht')
 )
 hond_kat.update_layout(title_x=0.5)
-
+hond_kat.add_layout_image(
+        dict(
+            source="https://images.unsplash.com/photo-1510993259919-38e221d3c0e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+            xref="x",
+            yref="y",
+            x=0,
+            y=2,
+            sizex=2,
+            sizey=2,
+            sizing= "contain" ,
+            opacity=0.5,
+            layer="below")
+)
+hond_kat.update_layout(template="plotly_white")
 line_chart = waarden[['tijdstempel', 'leeftijd', 'artiest', 'geslacht']].sort_values('tijdstempel').copy()
 line_chart.index = line_chart.tijdstempel
 line_chart.drop('tijdstempel',axis=1,inplace=True)
